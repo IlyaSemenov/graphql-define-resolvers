@@ -62,7 +62,9 @@ Instead of manually importing all modules, use `import.meta.glob` to import them
 import { mergeResolvers } from "@graphql-tools/merge"
 
 const resolvers = mergeResolvers(
-  Object.values<Resolvers>(import.meta.glob("./glob/*/*.ts", { import: "default", eager: true })),
+  Object.values<Resolvers>(
+    import.meta.glob("./glob/*/*.ts", { import: "default", eager: true })
+  ),
 )
 ```
 
