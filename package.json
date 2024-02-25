@@ -1,7 +1,7 @@
 {
   "name": "graphql-define-resolvers",
   "type": "module",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Collect typed GraphQL resolvers across multiple modules.",
   "author": "Ilya Semenov",
   "license": "MIT",
