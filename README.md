@@ -63,7 +63,7 @@ import { mergeResolvers } from "@graphql-tools/merge"
 
 const resolvers = mergeResolvers(
   Object.values<Resolvers>(
-    import.meta.glob("./glob/*/*.ts", { import: "default", eager: true })
+    import.meta.glob("./resolvers/*/*.ts", { import: "default", eager: true })
   ),
 )
 ```
@@ -76,7 +76,7 @@ For such cases, use non-eager glob import:
 ```ts
 const resolvers = mergeResolvers(
   await Promise.all(
-    Object.values(import.meta.glob("./resolvers/*/*.ts", { import: "default" }))
+    Object.values(import.meta.glob("./*/*.ts", { import: "default" }))
       .map(m => m() as Promise<Resolvers>),
   ),
 )
