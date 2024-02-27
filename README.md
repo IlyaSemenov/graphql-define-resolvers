@@ -16,7 +16,7 @@ npm install graphql-define-resolvers
 Create `resolvers/index.ts`:
 
 ```ts
-import { defineSimpleResolvers } from "graphql-define-resolvers"
+import { defineResolvers } from "graphql-define-resolvers"
 
 // Resolver types generated with @graphql-codegen/typescript-resolvers
 import type { Resolvers } from "../types"
