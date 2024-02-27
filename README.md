@@ -75,7 +75,7 @@ For such cases, use non-eager glob import:
 
 ```ts
 import { mergeResolvers } from "@graphql-tools/merge"
-import { defineSimpleResolvers } from "graphql-define-resolvers"
+import { defineResolvers } from "graphql-define-resolvers"
 
 import type { Resolvers } from "../types"
 
@@ -126,7 +126,7 @@ Another approach is using a single resolvers collector object for all resolvers.
 In `resolvers/index.ts`:
 
 ```ts
-import { defineSimpleResolvers } from "graphql-define-resolvers"
+import { defineResolvers } from "graphql-define-resolvers"
 
 // Resolver types generated with @graphql-codegen/typescript-resolvers
 import type { Resolvers } from "../types"
