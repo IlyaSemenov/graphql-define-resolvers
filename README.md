@@ -74,7 +74,15 @@ happen if you put this code in the same module which exports `defineQuery`).
 For such cases, use non-eager glob import:
 
 ```ts
-const resolvers = mergeResolvers(
+import { mergeResolvers } from "@graphql-tools/merge"
+import { defineSimpleResolvers } from "graphql-define-resolvers"
+
+import type { Resolvers } from "../types"
+
+export const { defineQuery, defineMutation } = defineResolvers<Resolvers>()
+
+// Works, even though the resolvers circularly import defineQuery from this module.
+export const resolvers = mergeResolvers(
   await Promise.all(
     Object.values(import.meta.glob("./*/*.ts", { import: "default" }))
       .map(m => m() as Promise<Resolvers>),
